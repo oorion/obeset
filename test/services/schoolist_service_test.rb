@@ -11,4 +11,11 @@ class SchoolistServiceTest < ActiveSupport::TestCase
       assert_equal response.first["overweight_percentage"], "16.3"
     end
   end
+
+  test "can hit individual school" do
+    VCR.use_cassette("schoolist_show") do
+      response = SchoolistService.new.school(4)
+      assert_equal response, ""
+    end
+  end
 end

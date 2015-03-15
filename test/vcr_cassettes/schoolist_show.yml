@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/v1/schools/4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"abd5d051f27280f7ef496b5d48eebd7e"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 70109f1f-b278-4b86-a73e-8eb87b774f1c
+      X-Runtime:
+      - '0.335725'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.1/2014-02-24)
+      Date:
+      - Sun, 15 Mar 2015 23:25:19 GMT
+      Content-Length:
+      - '174'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"id":4,"uid":"010623","overweight_percentage":"16.3","obese_percentage":"15.5","county_id":1,"created_at":"2015-03-11T15:14:00.381Z","updated_at":"2015-03-11T15:14:00.381Z"}'
+    http_version: 
+  recorded_at: Sun, 15 Mar 2015 23:25:19 GMT
+recorded_with: VCR 2.9.3

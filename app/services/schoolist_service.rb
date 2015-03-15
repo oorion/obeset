@@ -9,6 +9,10 @@ class SchoolistService
     parse(@service.get("schools"))
   end
 
+  def school(id)
+    parse(@service.get("schools/#{id}"))
+  end
+
   private
 
   def parse(data)
