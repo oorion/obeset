@@ -6,7 +6,7 @@ require 'minitest/rails/capybara'
 require 'vcr'
 
 VCR.configure do |config|
-  config.cassette_library_dir = "test/fixtures/vcr_cassettes"
+  config.cassette_library_dir = "test/vcr_cassettes"
   config.hook_into :webmock
 end
 

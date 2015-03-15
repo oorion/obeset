@@ -1,10 +1,17 @@
 class SchoolistService
-  def self.service
-    @service ||= Faraday.new(url: "http://localhost:3000")
+  attr_reader :service
+
+  def initialize
+    @service ||= Faraday.new(url: "http://localhost:3000/v1")
   end
 
-  def self.schools
-    @service.get("v1/schools")
+  def schools
+    parse(@service.get("schools"))
   end
 
+  private
+
+  def parse(data)
+    JSON.parse(data.body)
+  end
 end
