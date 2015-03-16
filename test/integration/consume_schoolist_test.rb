@@ -12,4 +12,17 @@ class ConsumeSchoolistTest < ActionDispatch::IntegrationTest
       assert page.has_content?("16.3")
     end
   end
+
+  test "it can show a specific school pulled from the api" do
+    VCR.use_cassette("schoolist_show") do
+      visit '/schools/4'
+      within('h2') do
+        assert page.has_content?("School 4")
+      end
+      within('.obesity') do
+        assert page.has_content?("Overweight Percentage: 16.3")
+        assert page.has_content?("Obese Percentage: 15.5")
+      end
+    end
+  end
 end
